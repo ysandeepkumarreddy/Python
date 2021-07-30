@@ -107,21 +107,24 @@ def hit_or_stand(deck, hand):
         break
 
 
-def show_some(player, dealer):
-    print("\nDealer's Hand:")
-    print(" <card hidden>")
-    print('', dealer.cards[1])
+def show_some(player, dealer):  # show cards only for player
+    print("\nDealer's Hand:")  # show cards only for player
+    print(" <card hidden>")  # hide dealer's first card
+    print('', dealer.cards[1])  # show the second card
+    # show cards only for player
     print("\nPlayer's Hand:", *player.cards, sep='\n ')
 
 
-def show_all(player, dealer):
-    print("\nDealer's Hand:", *dealer.cards, sep='\n ')
-    print("Dealer's Hand =", dealer.value)
-    print("\nPlayer's Hand:", *player.cards, sep='\n ')
-    print("Player's Hand =", player.value)
+def show_all(player, dealer):  # show all cards for both player and dealer
+    print("\nDealer's Hand:", *dealer.cards,
+          sep='\n ')  # show cards for dealer
+    print("Dealer's Hand =", dealer.value)  # show value of dealer's hand
+    print("\nPlayer's Hand:", *player.cards,
+          sep='\n ')  # show cards for player
+    print("Player's Hand =", player.value)  # show value of player's hand
 
 
-def player_busts(player, dealer, chips):
+def player_busts(player, dealer, chips):  # if player busts, dealer wins
     print("Player busts!")
     chips.lose_bet()
 
