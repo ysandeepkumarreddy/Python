@@ -19,7 +19,7 @@ class Card:
 
 class Deck:
     def __init__(self):  # create a deck of cards
-        self.deck = []
+        self.deck = []  # start with an empty list
         for suit in suits:
             for rank in ranks:
                 self.deck.append(Card(suit, rank))  # build deck
